@@ -5,6 +5,19 @@ tmux plugin that shows [Claude Code](https://claude.ai/code) session info in you
 - **Pane border** — any field from the Claude Code session, only in panes running Claude Code
 - **Status bar** — token usage, reset times, or any other session data
 
+```
+ ┌──────────────────────────────────────────────────────────────────────────────┐
+ │  [0] my-project  [1] server                  91% ↻ 14:00 │ 18% ↻ Thu 12:00  │
+ ├──────────────────────────────────────┬───────────────────────────────────────┤
+ │  $ claude                            │  $ vim server.py                      │
+ │                                      │                                       │
+ │  ✻ Working on your task…            │                                       │
+ │    Edited server.py                  │                                       │
+ │                                      │                                       │
+ ├─ 47% █████████▃░░░░░░░░░░ │ Sonnet 4.6 │ my-project ─┼───────────────────────┤
+ └──────────────────────────────────────────────────────────────────────────────┘
+```
+
 ## Prerequisites
 
 - [tmux](https://github.com/tmux/tmux) ≥ 3.0
