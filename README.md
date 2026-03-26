@@ -26,22 +26,40 @@ tmux plugin that shows [Claude Code](https://claude.ai/code) session info in you
 
 ## Install
 
-### With TPM
+### Installation with Tmux Plugin Manager (recommended)
 
-Add to your `tmux.conf`:
+Add plugin to the list of TPM plugins in .tmux.conf:
 
 ```tmux
 set -g @plugin 'niklasmoeller/tmux-claude'
 ```
 
-Then press `prefix + I` to install.
+Hit `prefix + I` to fetch the plugin and source it.
 
-### Manual
+If format strings are added to status-right (see `Usage` below), they should now be visible.
+
+### Manual Installation
+
+Clone the repo:
 
 ```sh
-git clone https://github.com/niklasmoeller/tmux-claude ~/.tmux/plugins/tmux-claude
-bash ~/.tmux/plugins/tmux-claude/tmux-claude.tmux
+git clone https://github.com/niklasmoeller/tmux-claude ~/clone/path
 ```
+
+Add this line to your .tmux.conf:
+
+```tmux
+run-shell ~/clone/path/tmux-claude.tmux
+```
+
+Reload TMUX environment:
+
+```sh
+# type this in terminal
+tmux source-file ~/.tmux.conf
+```
+
+If format strings are added to status-right (see `Usage` below), they should now be visible.
 
 ## Usage
 
