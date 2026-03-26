@@ -90,9 +90,6 @@ Examples:
 # Add session name
 set -g @claude_session_format "{{session_name}}  {{context_window.used_percentage | round}}% @ {{model.display_name}}"
 
-# Show effort level
-set -g @claude_session_format "{{context_window.used_percentage | round}}% @ {{model.display_name}} {{effortLevel}}"
-
 # Show remaining context instead of used
 set -g @claude_session_format "{{context_window.remaining_percentage | round}}% left · {{model.display_name}}"
 ```
@@ -119,21 +116,20 @@ set -g @claude_tokens_format "${{cost.total_cost_usd}} · {{rate_limits.five_hou
 
 The full Claude Code statusLine JSON payload is available. Key fields:
 
-| Field                                   | Example value                   |
-| --------------------------------------- | ------------------------------- |
-| `session_name`                          | `"my-project"`                  |
-| `model.display_name`                    | `"Sonnet 4.6"`                  |
-| `model.id`                              | `"claude-sonnet-4-6"`           |
-| `effortLevel`                           | `"normal"` / `"low"` / `"high"` |
-| `context_window.used_percentage`        | `47`                            |
-| `context_window.remaining_percentage`   | `53`                            |
-| `context_window.context_window_size`    | `200000`                        |
-| `rate_limits.five_hour.used_percentage` | `91`                            |
-| `rate_limits.five_hour.resets_at`       | `1774382400` (epoch)            |
-| `rate_limits.seven_day.used_percentage` | `18`                            |
-| `rate_limits.seven_day.resets_at`       | `1774864800` (epoch)            |
-| `cost.total_cost_usd`                   | `1.73`                          |
-| `version`                               | `"2.1.81"`                      |
+| Field                                   | Example value         |
+| --------------------------------------- | --------------------- |
+| `session_name`                          | `"my-project"`        |
+| `model.display_name`                    | `"Sonnet 4.6"`        |
+| `model.id`                              | `"claude-sonnet-4-6"` |
+| `context_window.used_percentage`        | `47`                  |
+| `context_window.remaining_percentage`   | `53`                  |
+| `context_window.context_window_size`    | `200000`              |
+| `rate_limits.five_hour.used_percentage` | `91`                  |
+| `rate_limits.five_hour.resets_at`       | `1774382400` (epoch)  |
+| `rate_limits.seven_day.used_percentage` | `18`                  |
+| `rate_limits.seven_day.resets_at`       | `1774864800` (epoch)  |
+| `cost.total_cost_usd`                   | `1.73`                |
+| `version`                               | `"2.1.81"`            |
 
 ## How it works
 
